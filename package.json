@@ -1,0 +1,24 @@
+{
+  "name": "minefield",
+  "version": "1.0.0",
+  "description": "A simple game where one attempts to find all the mines in a minefield",
+  "main": "index.html",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jahredhope/minefield.git"
+  },
+  "keywords": [
+    "Minefield",
+    "jahred",
+    "javascript",
+    "retro"
+  ],
+  "author": "Jahred Hope (jahredhope@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jahredhope/minefield/issues"
+  },
+  "homepage": "https://github.com/jahredhope/minefield#readme"
+}
