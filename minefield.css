@@ -1,0 +1,53 @@
+.mine {
+    background-color: #AA3333 !important;
+}
+.safe_mine {
+    background-color: #44FF22 !important;
+}
+.hide {
+    display: none;
+}
+td.tile {
+    border-radius: 5px;
+    height: 35px;
+    width: 35px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #222222;
+}
+td.tile span {
+    font-size: 20px;
+}
+body{
+    font-family: monospace;
+    color: #aaa;
+    background-color: #000;
+    font-size: 12px;
+    line-height: 14px;
+}
+input {
+    height: 30px;
+    border-radius: 5px;
+    color: #aaa;
+    border-style:outset;
+    background-color: #222222;
+    margin: 0 2px 0 2px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+input[type="number"] {
+    width: 36px;
+    cursor: text;
+}
+input[type="button"] {
+    width: 130px;
+}
+input[disabled="true"] {
+    color:#999;
+    border-color: #777;
+    background-color:#000000;
+    cursor: default;
+}
+label {
+    margin-right: 10px;
+}

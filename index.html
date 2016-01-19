@@ -1,0 +1,36 @@
+<html>
+    <!--Created by Jahred Hope-->
+    <head>
+        <title>Minefield</title>
+        <script src='http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js'></script>
+        <link rel="stylesheet" href="minefield.css" type="text/css">
+    </head>
+
+    <body>
+    <h1>Minefield by Jahred Hope</h1>
+    <input type="button" value="New Game" data-bind="click: onNewGame, attr:{value: gameButton}"></input>
+    <input type="number" step="1" pattern="\d*" data-bind="value: config.rows, attr : {min: minRows, max: maxRows, disabled: gameOn()}, event: {change: verifyRowCount}"></input><label>rows</label>
+    <input type="number" step="1" pattern="\d*" data-bind="value: config.cols, attr : {min: minCols, max: maxCols, disabled: gameOn()}, event: {change: verifyColCount}"></input><label>columns</label>
+    <input type="number" step="1" pattern="\d*" data-bind="value: config.mines, attr : {min: minMines, max: maxMines, disabled: gameOn()}, event: {change: verifyMineCount}"></input><label>mines</label>
+    <input type="checkbox" data-bind="checked: config.allowNegativeScore">Enable Cheating</input>
+    <br></br>
+    <div data-bind="foreach: cheats">
+        <input type="button" data-bind="value: $data.displayName, attr : {disabled: !$data.enable() }, click: onCheat"></input>
+    </div>
+    <span data-bind="visible: gameVictory">Victory!!!</span>
+    <span data-bind="visible: gameOver">Game Over!!!</span>
+    <br></br>
+    <table>
+        <tbody data-bind="foreach: tiles">
+            <tr data-bind="foreach: $data">
+                <td class="tile" data-bind="event: {contextmenu: onTileRClick}, click: onTileClick, css {mine: mine() && !hidden() && (!mark() || !gameVictory()), safe_mine: mine() && !hidden() && (mark() || gameVictory())}">
+                    <span data-bind=" css {hide: hidden() || mine()}, text: $data.count"></span>
+                    <span data-bind=" visible: mark() && hidden()">X</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    Score: <span data-bind="text: session.score"></span>(<span data-bind="text: session.title"></span>)
+    <script src="lib/minefield.js"></script>
+    </body>
+</html>
